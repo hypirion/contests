@@ -4,7 +4,7 @@
 
 int M = 1000000007;
 
-int perms(int i, char d[200], char last, char **cc) {
+int perms(int i, short d[200], char last, char **cc) {
   if (i == 0) {
     return 1;
   }
@@ -13,7 +13,7 @@ int perms(int i, char d[200], char last, char **cc) {
   while (i >> shift != 0) {
     if (((i >> shift) & 1) == 1) {
       char *c = cc[shift];
-      char dcpy[200];
+      short dcpy[200];
       memcpy(dcpy, d, sizeof(dcpy));
       char usable = 1;
       char nlast = last;
@@ -52,7 +52,7 @@ int main(void) {
       scanf("%s", c);
       cc[i] = c;
     }
-    char d[200] = {0};
+    short d[200] = {0};
     for (int i = 0; i < N; i++) {
       char* c = cc[i];
       for (int j = 0; c[j] != 0; j++) {
